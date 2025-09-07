@@ -5,111 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción a Socios Fundadores de Infinity3D</title>
     <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #28a745;
+            --text-color: #333;
+            --light-bg: #e9f5ff;
+            --dark-bg: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-color);
         }
         .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--dark-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px var(--shadow-color);
         }
         h1, h2 {
-            color: #007bff;
+            color: var(--primary-color);
             text-align: center;
+            font-weight: 600;
+        }
+        h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
         }
         .logo {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .logo img {
-            max-width: 150px;
+            max-width: 180px;
             height: auto;
+            border-radius: 8px;
+        }
+        p {
+            margin-bottom: 1em;
         }
         .cta-button {
             display: block;
             width: fit-content;
-            margin: 20px auto;
-            padding: 15px 30px;
-            background-color: #28a745;
+            margin: 25px auto;
+            padding: 15px 35px;
+            background-color: var(--accent-color);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1.1em;
+            font-weight: bold;
             text-align: center;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .cta-button:hover {
             background-color: #218838;
+            transform: translateY(-2px);
+        }
+        .cta-button:active {
+            transform: translateY(0);
         }
         .section {
-            margin-bottom: 25px;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            background-color: #e9f5ff;
-            border-radius: 4px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px var(--shadow-color);
         }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
+        .levels-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
-        form {
-            background-color: #f8f9fa;
-            padding: 25px;
-            border-radius: 5px;
-            border: 1px solid #dee2e6;
+        .level-card {
+            background-color: var(--dark-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+        .level-card h4 {
+            font-size: 1.25em;
+            color: var(--primary-color);
+            margin-top: 0;
         }
-        form input[type="email"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            box-sizing: border-box;
+        .level-card p {
+            font-size: 0.9em;
+            color: #555;
         }
-        form input[type="submit"] {
-            background-color: #007bff;
+        .level-card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .level-card ul li {
+            margin-bottom: 5px;
+            color: #444;
+        }
+        .level-card .payment-button {
+            background-color: var(--primary-color);
             color: white;
-            padding: 12px 20px;
+            padding: 10px 15px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
+            font-weight: bold;
+            text-align: center;
             transition: background-color 0.3s ease;
+            margin-top: 15px;
         }
-        form input[type="submit"]:hover {
+        .level-card .payment-button:hover {
             background-color: #0056b3;
         }
         .important-note {
             background-color: #fff3cd;
             border-left: 5px solid #ffc107;
-            padding: 15px;
+            padding: 20px;
             margin-top: 30px;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-size: 0.95em;
         }
         .discord-link {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
         .discord-link a {
             color: #7289da;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
         }
         .discord-link a:hover {
             text-decoration: underline;
+            color: #5865f2;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 0.85em;
+            color: #888;
+        }
+        #thank-you-message {
+            display: none;
+            text-align: center;
+            padding: 50px;
+        }
+        .disclaimer-note {
+            background-color: #fff8e1;
+            border: 1px dashed #ffd54f;
+            color: #5d4037;
+            padding: 10px 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9em;
+            font-style: italic;
         }
     </style>
 </head>
@@ -117,50 +184,186 @@
 
     <div class="container">
         <div class="logo">
-            <img src="https://via.placeholder.com/150x100?text=Infinity3D+Logo" alt="Logo de Infinity3D">
+            <img src="https://via.placeholder.com/180x120?text=Infinity3D+Logo" alt="Logo de Infinity3D">
         </div>
         <h1>¡Conviértete en Socio Fundador de Infinity3D!</h1>
 
-        <p style="text-align: center; font-size: 1.1em;">
+        <p style="text-align: center; font-size: 1.1em; max-width: 650px; margin: 0 auto 30px;">
             ¿Te apasiona la animación 3D y quieres formar parte de una comunidad innovadora que está redefiniendo los límites de la creatividad?
             ¡Únete a Infinity3D como socio y sé pionero en el futuro de la animación!
         </p>
 
-        <h2>¿Por qué unirte a Infinity3D?</h2>
-        <div class="section">
-            <ul>
-                <li>**Acceso Exclusivo:** Sé de los primeros en experimentar y utilizar las últimas características y herramientas de nuestra aplicación.</li>
-                <li>**Influencia en el Desarrollo:** Tu opinión es invaluable. Ayúdanos a moldear la dirección y las funcionalidades de Infinity3D.</li>
-                <li>**Recursos Premium:** Accede a tutoriales avanzados, plantillas exclusivas y packs de assets 3D.</li>
-                <li>**Networking Exclusivo:** Conéctate con otros animadores, artistas 3D y desarrolladores en nuestra comunidad privada.</li>
-                <li>**Soporte Prioritario:** Disfruta de atención al cliente prioritaria.</li>
-                <li>**Descuentos Especiales:** Benefíciate de ofertas y descuentos exclusivos.</li>
-                <li>**Insignia de Socio Fundador:** Recibe una insignia digital exclusiva.</li>
-            </ul>
+        <div id="main-content">
+            <h2>Elige tu Nivel de Socio</h2>
+            <div class="levels-section">
+                <div class="level-card">
+                    <div>
+                        <h4>Nivel 1: Socio Espectador</h4>
+                        <p><strong>Costo: Gratis</strong><br>Para todos los que se unen a la comunidad y quieren estar al tanto de las novedades.</p>
+                        <ul>
+                            <li>Acceso al servidor de Discord.</li>
+                            <li>Notificaciones exclusivas de anuncios.</li>
+                        </ul>
+                    </div>
+                    <button class="payment-button">Elegir y Unirme</button>
+                </div>
+                <div class="level-card">
+                    <div>
+                        <h4>Nivel 2: Socio Colaborador</h4>
+                        <p><strong>Costo: Gratis</strong><br>Para quienes participan activamente en la comunidad y aportan ideas valiosas.</p>
+                        <ul>
+                            <li>**Beneficios del Nivel 1.**</li>
+                            <li>Prioridad en encuestas y votaciones sobre funciones.</li>
+                            <li>Acceso a chats beta.</li>
+                            <li>Insignia digital exclusiva de nivel.</li>
+                        </ul>
+                    </div>
+                    <button class="payment-button">Elegir y Unirme</button>
+                </div>
+                <div class="level-card">
+                    <div>
+                        <h4>Nivel 3: Socio Exclusivo</h4>
+                        <p><strong>Costo: Gratis</strong><br>Para los miembros más comprometidos y con aportes notables al proyecto.</p>
+                        <ul>
+                            <li>**Beneficios del Nivel 2.**</li>
+                            <li>Acceso a tutoriales y workshops avanzados.</li>
+                            <li>Descuentos en futuras plantillas y assets 3D.</li>
+                            <li>Soporte técnico prioritario.</li>
+                            <li>Participación en sesiones de preguntas y respuestas con el equipo.</li>
+                        </ul>
+                    </div>
+                    <button class="payment-button">Elegir y Unirme</button>
+                </div>
+                <div class="level-card">
+                    <div>
+                        <h4>Nivel 4: VIP</h4>
+                        <p><strong>Costo: Gratis</strong><br>Para quienes brindan un apoyo económico o contribuciones excepcionales a la comunidad.</p>
+                        <ul>
+                            <li>**Beneficios del Nivel 3.**</li>
+                            <li>Invitaciones a eventos y reuniones privadas.</li>
+                            <li>Menciones especiales en los créditos de los proyectos.</li>
+                            <li>Acceso a un pack de recursos 3D premium.</li>
+                            <li>Posibilidad de solicitar una función o recurso personalizado.</li>
+                        </ul>
+                    </div>
+                    <button class="payment-button">Elegir y Unirme</button>
+                </div>
+                <div class="level-card">
+                    <div>
+                        <h4>Nivel 5: VIP+ Desarrollador</h4>
+                        <p><strong>Costo: $3 USD / quincenal</strong><br>Para los miembros que contribuyen directamente al desarrollo del proyecto con código o recursos.</p>
+                        <ul>
+                            <li>**Beneficios del Nivel 4.**</li>
+                            <li>Acceso anticipado a prototipos y versiones Alpha.</li>
+                            <li>Influencia directa en la hoja de ruta del desarrollo.</li>
+                            <li>Comunicación directa con el equipo central.</li>
+                            <li>Acceso a un pack de recursos 3D personalizados.</li>
+                        </ul>
+                    </div>
+                    <button class="payment-button">Elegir y Pagar</button>
+                </div>
+                <div class="level-card">
+                    <div>
+                        <h4>Nivel 6: Desarrollador Élite</h4>
+                        <p><strong>Costo: $5 USD / quincenal</strong><br>Para un selecto grupo que contribuye en las áreas más críticas del desarrollo del software.</p>
+                        <ul>
+                            <li>**Beneficios del Nivel 5.**</li>
+                            <li>Acceso a los sistemas de control de versiones (repositorio de código).</li>
+                            <li>Acceso a las herramientas de despliegue y servidores de prueba.</li>
+                            <li>Derecho a voto en decisiones de arquitectura del software.</li>
+                            <li>Créditos de desarrollador principal en todos los proyectos.</li>
+                        </ul>
+                    </div>
+                    <button class="payment-button">Elegir y Pagar</button>
+                </div>
+            </div>
+            
+            <div class="important-note" style="background-color: #d1e7dd; border-left-color: #28a745;">
+                <p style="font-weight: bold; color: #155724;">¡Tu apoyo es vital!</p>
+                <p>Hay una razón por la que estamos incluyendo pagos. Este dinero es crucial para mantener la aplicación, actualizar los servidores y asegurar que nuestra plataforma no se caiga. Tu contribución, por pequeña que sea, nos ayuda a seguir innovando y creando el futuro de la animación. ¡Y estate atento a **descuentos aleatorios** que aparecerán sin previo aviso!</p>
+            </div>
         </div>
 
-        <h2>¡Inscríbete ahora!</h2>
-        <form>
-            <label for="email">Ingresa tu correo electrónico:</label>
-            <input type="email" id="email" name="email" placeholder="tu.correo@ejemplo.com" required>
-            <input type="submit" value="¡Quiero ser socio!">
-        </form>
+        <div id="thank-you-message" style="display: none;">
+            <h2 style="color: var(--accent-color);">¡Muchas gracias!</h2>
+            <p style="font-size: 1.5em; font-weight: bold; margin-bottom: 20px;">Tu pago virtual ha sido procesado.</p>
+            
+            <p>Ya eres socio de Infinity3D. Ahora, confirma tu registro para poder disfrutar de todos los beneficios:</p>
 
-        <div class="important-note">
-            <p style="font-weight: bold;">¡Importante!</p>
-            <p>Pronto se te enviará un correo a la dirección que has proporcionado. Asegúrate de revisar tu bandeja de entrada (y spam).</p>
-            <p>Para agilizar el proceso y confirmar tu interés, por favor, ve a nuestro servidor de Discord y dinos tu Gmail. Esto nos ayudará a asegurarnos de que recibas toda la información.</p>
+            <form id="email-form" style="margin-top: 20px;">
+                <label for="user-email" style="font-weight: bold;">Por favor, agrega tu correo para el registro:</label>
+                <input type="email" id="user-email" placeholder="tu-correo@ejemplo.com" required style="width: calc(100% - 22px); padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                <button type="button" id="send-email-button" disabled style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: not-allowed; margin-top: 10px;">Agrega primero tu correo</button>
+            </form>
+            
+            <a href="https://discord.gg/Qahp29Ur" target="_blank" class="cta-button" style="margin-top: 30px;">Ir al Discord</a>
+        </div>
+        
+        <div class="disclaimer-note">
+            Aviso importante: Este es un prototipo de la interfaz de pago. No se procesan transacciones reales.
         </div>
 
         <div class="discord-link">
             <p>¡Te esperamos en nuestra comunidad!</p>
-            <a href="https://discord.gg/Qahp29Ur" target="_blank">👉 Haz clic aquí para ir a nuestro Discord y dame tu Gmail por favor 👈</a>
+            <a href="https://discord.gg/Qahp29Ur" target="_blank">👉 Haz clic aquí para ir a nuestro Discord y confirma tu correo 👈</a>
         </div>
 
-        <p style="text-align: center; margin-top: 40px; font-style: italic; color: #555;">
-            Infinity3D: Donde la imaginación cobra vida.
-        </p>
+        <div class="footer">
+            <p>Infinity3D: Donde la imaginación cobra vida.</p>
+            <p>Creado por Patok MC x Españolix 2.0</p>
+        </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paymentButtons = document.querySelectorAll('.payment-button');
+            const mainContent = document.getElementById('main-content');
+            const thankYouMessage = document.getElementById('thank-you-message');
+            const userEmailInput = document.getElementById('user-email');
+            const sendEmailButton = document.getElementById('send-email-button');
+
+            paymentButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Ocultar el contenido principal
+                    mainContent.style.display = 'none';
+
+                    // Mostrar el mensaje de agradecimiento después de un breve retraso
+                    setTimeout(() => {
+                        thankYouMessage.style.display = 'block';
+                    }, 500); // Retraso de 0.5 segundos para simular el procesamiento
+                });
+            });
+
+            // Lógica para habilitar el botón de enviar correo
+            userEmailInput.addEventListener('input', () => {
+                const emailValue = userEmailInput.value;
+                // Expresión regular para una validación de email simple
+                const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
+                
+                if (isValidEmail) {
+                    sendEmailButton.disabled = false;
+                    sendEmailButton.style.cursor = 'pointer';
+                    sendEmailButton.style.backgroundColor = 'var(--accent-color)';
+                    sendEmailButton.innerText = 'Enviar correo de registro';
+                } else {
+                    sendEmailButton.disabled = true;
+                    sendEmailButton.style.cursor = 'not-allowed';
+                    sendEmailButton.style.backgroundColor = '#ccc';
+                    sendEmailButton.innerText = 'Agrega primero tu correo';
+                }
+            });
+
+            // Lógica para enviar el correo al hacer clic en el botón
+            sendEmailButton.addEventListener('click', () => {
+                const userEmail = userEmailInput.value;
+                const recipientEmail = 'andres274z90.o@gmail.com';
+                const subject = encodeURIComponent('Inscripción a Socio Fundador');
+                const body = encodeURIComponent(`Hola, quiero inscribirme como socio fundador. Mi correo es: ${userEmail}.`);
+                
+                window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+            });
+        });
+    </script>
 
 </body>
 </html>
